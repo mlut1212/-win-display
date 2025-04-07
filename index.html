@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WIN Tracker</title>
+  <meta http-equiv="refresh" content="5">
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-size: 48px;
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
+  <div id="display">
+    WIN : <span id="score">0</span>/3
+  </div>
+  <script>
+    fetch("win.txt")
+      .then(res => res.text())
+      .then(text => {
+        document.getElementById("score").innerText = text.trim();
+      });
+  </script>
+</body>
+</html>
